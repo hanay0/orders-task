@@ -1,0 +1,20 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-lg-4 col-xl-3 mb-3 d-flex" *ngFor="let product of products">
+                <div class="card">
+                    <img src="{{ product.ProductImg }}" class="card-img-top" alt="{{ product.ProductName }}">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">{{ product.ProductName }}</h5>
+                        <p class="card-text">Price: {{ product.ProductPrice }}</p>
+                        <p 
+                            class="badge" 
+                            [ngClass]="{'bg-danger': product.AvailablePieces <= 15, 'bg-secondary': product.AvailablePieces > 15}">
+                                Available Pieces: {{ product.AvailablePieces }}
+                        </p>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+</section>
